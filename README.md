@@ -107,7 +107,7 @@ For now, I can return a random and real sentence I said for the most part, which
 
 I realize that even though I filtered to only exclusively look at what I wrote, I talk about other people or some personal things I'm not okay with releasing or did not have consent to release. My professor has wanted us to consider how Claude could be useful for some coding help but explicitly warned us against sharing personal information to a machine and company that can do whatever they want with it. At first I was hesitant to even return to this project, but after thinking about it, I should explore what I can control before I decide if its worthwhile to continue pursuing.
 
-I used Claude to figure out the library and lines of code that allows me to filter out the common English names, just in case I do not hard code around all of them. I did not share any of the files with it. I just told it I had a list of sentences. Honestly after how easy the result was, I knew I should keep haunting Stack Overflow, W3schools, reddit, and other help forums for answers. Its the fun and frustrating part of learning.
+I used Claude to figure out the library and lines of code that allows me to filter out the common English names, just in case I do not hard code around all of them. I did not share any of the files with it. I just told it I had a list of sentences. Honestly after how easy the result was, I knew I should keep haunting Stack Overflow, W3schools, Reddit, and other help forums for answers. Its the fun and frustrating part of learning.
 
 I would like this project to be made primarily by me and what I learn from other real people. Because its all about me.
 
