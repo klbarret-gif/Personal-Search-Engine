@@ -80,7 +80,7 @@ So I went backwards and just said to display if *any* part of the sentence inclu
 
 In thinking capitalized start == start of sentence, I forgot that I pretty consistently capitalize my I's, thanks mostly to autocorrect. So there were some trigrams that going back I did say often, but almost exclusively in the *middle* of sentences because they started with "I". Special characters, including periods, are removed from the content pretty early. There also might be some weird things the n-gram code and things I do afterwards that might be causing problems in the equivalence. Maybe white space I have not used strip() on yet. I had to go back and rework how I handled contractions which did help some of the issues.
 
-I also had the same problem with contractions at the end of phrases come up in the start. So "I'm not" gets incorrectly split to ("I","m","not). I have allegedly fixed that.
+I also had the same problem with contractions at the end of phrases come up in the start. So "I'm not" gets incorrectly split to ("I","m","not"). I have allegedly fixed that.
 
 ```python
 firstSearchWord,secondSearchWord,thirdSearchTerm=searchPhrase
