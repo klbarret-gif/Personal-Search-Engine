@@ -109,7 +109,7 @@ I realize that even though I filtered to only exclusively look at what I wrote, 
 
 I used Claude to figure out the library and lines of code that allows me to filter out the common English names, just in case I do not hard code around all of them. I did not share any of the files with it. I just told it I had a list of sentences. Honestly after how easy the result was, I knew I should keep haunting Stack Overflow, W3schools, Reddit, and other help forums for answers. Its the fun and frustrating part of learning.
 
-I would like this project to be made primarily by my struggles remembering python and what I learn from other real people. Because its all about me.
+I would like this project to be made primarily by my struggles remembering Python and what I learn from other real people.
 
 
 
