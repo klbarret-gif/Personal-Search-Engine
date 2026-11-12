@@ -1,4 +1,4 @@
-#code found on stack overflow and google with assistance from Claude for name library use
+#code found on stack overflow and google with assistance from Claude for name library implementation
 
 import re
 import random
@@ -32,7 +32,7 @@ trijectTotal=Counter()
 
 for i in range(151):
   index=i+1
-  fileName="ajsalis_page_"+str(index)+".csv"
+  fileName="fileName_page_"+str(index)+".csv"
   allMsg=pandas.read_csv(fileName,usecols=["content"])
   allMsg.fillna(" ", inplace=True)
   allMsg_s=allMsg.astype(str)
