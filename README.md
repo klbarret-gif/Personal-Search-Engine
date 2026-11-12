@@ -97,7 +97,8 @@ Bigrams are trigrams are sometimes weird.
 
 For now, I can return a random and real sentence I said for the most part, which makes it funnier. It is not bound by coming up in the start of the sentence yet. It is very slow though.
 
-<img width="437" height="29" alt="Screenshot 2026-11-11 193451" src="https://github.com/user-attachments/assets/e8ed3584-921f-4706-abd3-3b044101565a" />
+<img width="437" height="29" alt="Screenshot 2026-11-11 193451" src="https://github.com/user-attachments/assets/bde837df-153e-4a1c-a789-94dea990351d" />
+
 
 
 ## Other considerations
