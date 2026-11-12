@@ -80,16 +80,27 @@ In thinking capitalized start == start of sentence, I forgot that I pretty consi
 
 I also had the same problem with contractions at the end of phrases come up in the start. So "I'm not" gets incorrectly split to ("I","m","not). I have allegedly fixed that.
 
+```python
+firstSearchWord,secondSearchWord,thirdSearchTerm=searchPhrase
+  if thirdSearchTerm=="t" or thirdSearchTerm=="s" or thirdSearchTerm=="ve"or thirdSearchTerm=="nt":
+    #solve issue of appostrophe based on last term being length 1
+    searchTerm=firstSearchWord + " " + secondSearchWord+thirdSearchTerm
+  elif secondSearchWord=="m" or secondSearchWord=="t" or secondSearchWord=="s" or secondSearchWord=="ve":
+    searchTerm=firstSearchWord+secondSearchWord+ " "+thirdSearchTerm
+  else:
+    searchTerm=firstSearchWord + " " + secondSearchWord+ " "+thirdSearchTerm
+```
+
 Bigrams are trigrams are sometimes weird.
 
-##The good news
+## The good news
 
 For now, I can return a random and real sentence I said for the most part, which makes it funnier. It is not bound by coming up in the start of the sentence yet. It is very slow though.
 
 <img width="437" height="29" alt="Screenshot 2026-11-11 193451" src="https://github.com/user-attachments/assets/e8ed3584-921f-4706-abd3-3b044101565a" />
 
 
-##Other considerations
+## Other considerations
 
 I realize that even though I filtered to only exclusively look at what I wrote, I talk about other people or some personal things I'm not okay with releasing or did not have consent to release. My professor has wanted us to consider how Claude could be useful for some coding help but explicitly warned us against sharing personal information to a machine and company that can do whatever they want with it. At first I was hesitant to even return to this project, but after thinking about it, I should explore what I can control before I decide if its worthwhile to continue pursuing.
 
