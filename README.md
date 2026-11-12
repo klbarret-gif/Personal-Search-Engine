@@ -20,7 +20,7 @@ Conveniently the idea of bigrams (or just collecting any n-gram series) lends it
 
 In starting to implement it I confirmed the existence of some flaws that were in my initial bijection code.
 
-###1) Adding trijections
+### 1) Adding trijections
 
 Early on, this was just duplicating the code I already had and changing the variable in the Stack Overflow n-grams code to 3 instead of 2.
 
