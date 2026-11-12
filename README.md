@@ -1,5 +1,5 @@
 # Personal-Search-Engine
-A follow-up on the Personal Digital Lexicon from last semester
+An experimental follow-up on the Personal Digital Lexicon from last semester
 
 ## What I had last time:
 
