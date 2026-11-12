@@ -1,12 +1,14 @@
 # Personal-Search-Engine
 An experimental follow-up on the Personal Digital Lexicon from last semester
 
+
 ## What I had last time:
 
 When I rushed this project after a last minute pivot in my internet collection assignment, I managed to get my slow and prone to dying laptop to run a chrome extension overnight to get over 150,000 of my messages onto a series of files. Thanks to people years ago on Stack Overflow and Google (unfortunately includes the AI-generated results too), I was able to read and edit those files with some lines of Python code to see my most common bigrams, or two word combinations. I was also able to get some fun emoji statistics. 
 
 <img width="686" height="149" alt="Screenshot 2026-11-11 193417" src="https://github.com/user-attachments/assets/9af91130-0a57-40a6-9e8e-6509530eed8b" />
 
+[Just in case you didn't see it](https://github.com/klbarret-gif/Personal-Digital-Lexicon-)
 
 ## What I disliked and wanted to change:
 
