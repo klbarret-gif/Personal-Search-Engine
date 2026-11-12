@@ -1,0 +1,119 @@
+#code found on stack overflow and google with assistance from Claude for name library use
+
+import re
+import random
+from collections import Counter
+from itertools import tee, islice
+import pandas as pd
+import pandas
+import nltk
+
+nltk.download('names', quiet=True)  # one-time download, skipped if already present
+from nltk.corpus import names
+nameList = {n.lower() for n in names.words()}
+allSentences=[]
+
+
+
+def ngrams(lst, n):
+  tlst = lst
+  while True:
+    a, b = tee(tlst)
+    l = tuple(islice(a, n))
+    if len(l) == n:
+      yield l
+      next(b)
+      tlst = b
+    else:
+      break
+
+bijectTotal=Counter()
+trijectTotal=Counter()
+
+for i in range(151):
+  index=i+1
+  fileName="ajsalis_page_"+str(index)+".csv"
+  allMsg=pandas.read_csv(fileName,usecols=["content"])
+  allMsg.fillna(" ", inplace=True)
+  allMsg_s=allMsg.astype(str)
+  all_values = allMsg_s.stack().tolist()
+  single_line = " ".join(all_values)
+  words = re.findall(r"\w+", single_line) #, re.IGNORECASE
+  words = ["undefined" if w[:1].isupper() and w.strip('.,!?;:"\'').lower() in nameList else w for w in words]
+  c=Counter(ngrams(words, 2)) #list of tuples
+  c2=Counter(ngrams(words,3))
+  bijectTotal.update(c)
+  trijectTotal.update(c2)
+  allSentences+=all_values
+
+# print(bijectTotal.most_common(500))
+#total is a counter of tuples, including lowercase
+
+#filter total to only include uppercase bijections
+
+uppercaseBijectTotals=Counter()
+uppercaseTrijectTotals=Counter()
+
+allBijects=list(bijectTotal.elements())
+allTrijects=list(trijectTotal.elements())
+
+for biject in allBijects:
+  firstWord, secondWord=biject
+  if firstWord[0].isupper():
+    uppercaseBijectTotals.update([biject])
+
+for triject in allTrijects:
+  firstWord, secondWord,thirdWord =triject
+  if firstWord[0].isupper():
+    uppercaseTrijectTotals.update([triject])
+
+# print(uppercaseBijectTotals.most_common(100))
+# print(uppercaseTrijectTotals.most_common(100))
+#returns the most common uppercase bijects, like a search engine
+
+searchBases= uppercaseBijectTotals.most_common(100)+uppercaseTrijectTotals.most_common(100)
+
+# searchBases=uppercaseTrijectTotals.most_common(100)
+
+
+baseJectIndex=random.randint(0,199)
+baseJect=searchBases[baseJectIndex]
+print(baseJect)
+#returns random bi or tri ject to use as base
+
+searchPhrase, count=baseJect
+if len(searchPhrase)==2:
+  firstSearchWord,secondSearchWord=searchPhrase
+  searchTerm=firstSearchWord + " " + secondSearchWord
+else:
+  firstSearchWord,secondSearchWord,thirdSearchTerm=searchPhrase
+  if thirdSearchTerm=="t" or thirdSearchTerm=="s" or thirdSearchTerm=="ve"or thirdSearchTerm=="nt":
+    #solve issue of appostrophe based on last term being length 1
+    searchTerm=firstSearchWord + " " + secondSearchWord+thirdSearchTerm
+  elif secondSearchWord=="m" or secondSearchWord=="t" or secondSearchWord=="s" or secondSearchWord=="ve":
+    searchTerm=firstSearchWord+secondSearchWord+ " "+thirdSearchTerm
+  else:
+    searchTerm=firstSearchWord + " " + secondSearchWord+ " "+thirdSearchTerm
+
+
+print(searchTerm)
+
+
+
+# print(allSentences)
+
+searchTermSentences=[]
+
+for sentence in allSentences:
+  sentenceList=sentence.split()
+  if searchTerm in sentence:
+    editedSentence=["undefined" if s[:1].isupper() and s.strip('.,!?;:"\'').lower() in nameList else s for s in sentenceList]
+    searchTermSentences.append(editedSentence)
+  
+# print(searchTermSentences)
+
+if (len(searchTermSentences)!=0):
+  index=random.randint(0,len(searchTermSentences)-1)
+  print(" ".join(searchTermSentences[index]))
+else:
+  print("exists only within sentences")
